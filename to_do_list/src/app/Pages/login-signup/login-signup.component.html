@@ -7,7 +7,7 @@
 <form *ngIf="activeForm === 'signup'">
     <h2>SIGN UP</h2>
     <div class="form-wrapper">
-        <input type="text" name="name" [(ngModel)]="signupObj.name" placeholder="Name">
+        <input type="text" name="name" [(ngModel)]="signupObj.name"  placeholder="Name">
     </div>
     <div class="form-wrapper">
         <input type="email" name="email" [(ngModel)]="signupObj.email" placeholder="Email">
@@ -28,7 +28,7 @@
     <div class="form-wrapper">
         <input type="password" name="password" [(ngModel)]="loginObj.password" placeholder="Password">
     </div>
-    <button type="submit" (click)="loginForm()">Sign Up</button>
+    <button type="submit" (click)="loginForm()">Login</button>
     <p (click)="toggleForm('signup')">Don't have an account? <span class="highlight">Sign up</span></p>
 </form>
 

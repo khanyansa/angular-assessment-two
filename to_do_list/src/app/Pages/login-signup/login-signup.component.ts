@@ -49,7 +49,8 @@ export class LoginSignupComponent {
       const users = JSON.parse(localusers);
       const isUserExist =users.find((user:signupModel)=> user.email == this.loginObj.email && user.password == this.loginObj.password)
       if(isUserExist != undefined){
-        this._snackbar.open('Login successful!', 'Close')
+        this._snackbar.open('Login successful!', 'Close');
+        localStorage.setItem('loggedUser', JSON.stringify(isUserExist));
         this._router.navigateByUrl('/dashboard');
       }
       else{

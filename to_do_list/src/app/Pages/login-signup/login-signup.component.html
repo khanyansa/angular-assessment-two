@@ -1,1 +1,35 @@
-<p>login-signup works!</p>
+<div class="heading">
+    <h2>TASKFLOW</h2>
+</div>
+
+<div class="loginsignup-container">
+<!-- Sign Up form -->
+<form *ngIf="activeForm === 'signup'">
+    <h2>SIGN UP</h2>
+    <div class="form-wrapper">
+        <input type="text" name="name" [(ngModel)]="signupObj.name" placeholder="Name">
+    </div>
+    <div class="form-wrapper">
+        <input type="email" name="email" [(ngModel)]="signupObj.email" placeholder="Email">
+    </div>
+    <div class="form-wrapper">
+        <input type="password" name="password" [(ngModel)]="signupObj.password" placeholder="Password">
+    </div>
+    <button type="submit" (click)="signupForm()">Sign Up</button>
+    <p (click)="toggleForm('login')">Already have an account? <span class="highlight">Login</span></p>
+</form>
+
+<!-- Login form -->
+ <form *ngIf="activeForm === 'login'">
+    <h2>LOGIN</h2>
+    <div class="form-wrapper">
+        <input type="email" name="email" [(ngModel)]="loginObj.email" placeholder="Email">
+    </div>
+    <div class="form-wrapper">
+        <input type="password" name="password" [(ngModel)]="loginObj.password" placeholder="Password">
+    </div>
+    <button type="submit" (click)="loginForm()">Sign Up</button>
+    <p (click)="toggleForm('signup')">Don't have an account? <span class="highlight">Sign up</span></p>
+</form>
+
+</div>

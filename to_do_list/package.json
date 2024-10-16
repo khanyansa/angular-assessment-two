@@ -1,5 +1,5 @@
 {
-  "name": "project",
+  "name": "to-do-list",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:project": "node dist/project/server/server.mjs"
+    "serve:ssr:to_do_list": "node dist/to_do_list/server/server.mjs"
   },
   "private": true,
   "dependencies": {

@@ -1,1 +1,26 @@
 <h2 style="padding: 15px; background-color:  #fffbfb; color: #e64f47; text-align: center ;">Welcome to TaskFlow!</h2>
+
+<!-- TO DO LIST CODE -->
+
+<form (submit)="addTask()">
+    <input type="text" placeholder="Enter task name" [(ngModel)]="newTask.name" name="taskName" required />
+    <select [(ngModel)]="newTask.priority" name="taskPriority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+    </select>
+    <input type="date" [(ngModel)]="newTask.dueDate" name="taskDueDate" required />
+    <button type="submit">{{ isEditing ? 'Edit Task' : 'Add Task' }}</button>
+</form>
+
+<ul>
+    <li *ngFor="let task of tasks" [ngClass]="getPriorityClass(task)">
+        <span>{{ task.name }} - Due: {{ task.dueDate | date }}</span>
+        <span class="complete-task">Complete: <input type="checkbox" [(ngModel)]="task.completed" (change)="updateTask(task)" /></span>
+        <div class="task-actions">
+            <button (click)="editTask(task)">Edit</button>
+            <button (click)="deleteTask(task)">Delete</button>
+        </div>
+        
+    </li>
+</ul>

@@ -1,16 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-dashboard',
-//   standalone: true,
-//   imports: [],
-//   templateUrl: './dashboard.component.html',
-//   styleUrl: './dashboard.component.css'
-// })
-// export class DashboardComponent {
-
-// }
-
 
 // UPDATED TO DO LIST CODE
 
@@ -30,7 +17,7 @@ interface Task {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule] // Include both FormsModule and CommonModule
+  imports: [FormsModule, CommonModule] 
 })
 export class DashboardComponent implements OnInit {
   currentDate: Date;
@@ -44,8 +31,8 @@ export class DashboardComponent implements OnInit {
   taskToEdit: Task | null = null;
 
   ngOnInit(): void {
-    this.loadTasks(); // Load tasks from local storage when the component is initialized
-    this.sortTasksByDate(); // Sort tasks by date initially
+    this.loadTasks(); 
+    this.sortTasksByDate(); 
   }
 
   loadTasks() {
@@ -61,7 +48,7 @@ export class DashboardComponent implements OnInit {
   }
 
   addTask() {
-    if (this.newTask.name.trim() === '') return; // Prevent adding empty tasks
+    if (this.newTask.name.trim() === '') return; 
 
     if (this.isEditing && this.taskToEdit) {
       this.taskToEdit.name = this.newTask.name;
@@ -74,8 +61,8 @@ export class DashboardComponent implements OnInit {
     }
 
     this.saveTasks();
-    this.newTask = { name: '', priority: 'low', dueDate: '', completed: false }; // Reset form
-    this.sortTasksByDate(); // Sort after adding or editing
+    this.newTask = { name: '', priority: 'low', dueDate: '', completed: false }; 
+    this.sortTasksByDate(); 
   }
 
   deleteTask(task: Task) {

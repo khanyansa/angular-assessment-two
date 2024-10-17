@@ -68,7 +68,7 @@
 
 
 .dashboard-container {
-    padding: 20px;
+    padding: 10px 15px;
 }
 
 ul {
@@ -161,4 +161,127 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+}
+
+
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .date-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 20px;
+    }
+
+    .date-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .priority-colours li {
+        margin: 5px 5px 0 0;
+        padding: 3px 8px;
+    }
+
+    ul li button {
+        padding: 5px;
+    }
+
+    form {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    form input,
+    form select,
+    form button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .date-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .date-container p {
+        font-size: 1.2rem;
+    }
+
+    form {
+        padding: 0 10px;
+    }
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0 10px;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+li span {
+    flex: 1;
+}
+
+.complete-task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+}
+
+.task-actions {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+}
+
+
+ul li button {
+    background: #e9e6e6;
+    color: #d94740;
+    border: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+ul li button:hover {
+    background-color: #d0cccc;
+}
+
+form input,
+select,
+button {
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 6px;
+    border: 1px #808080 solid;
+    outline: none;
+}
+
+form button {
+    border: none;
+    background-color: #ff3f34;
+    color: #fff;
+    margin-left: 8px;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e35048;
 }

@@ -33,6 +33,11 @@ interface Task {
   imports: [FormsModule, CommonModule] // Include both FormsModule and CommonModule
 })
 export class DashboardComponent implements OnInit {
+  currentDate: Date;
+
+  constructor(){
+    this.currentDate = new Date();
+  }
   tasks: Task[] = [];
   newTask: Task = { name: '', priority: 'low', dueDate: '', completed: false };
   isEditing: boolean = false;
@@ -89,7 +94,15 @@ export class DashboardComponent implements OnInit {
   }
 
   getPriorityClass(task: Task) {
-    if (task.priority === 'high') {
+    const today = new Date();
+    const dueDate = new Date(task.dueDate);
+    if (task.completed){
+      return 'completed-task';
+    }
+    else if(dueDate < today){
+      return 'overdue-task';
+    }
+      else if (task.priority === 'high') {
       return 'high-priority';
     } else if (task.priority === 'medium') {
       return 'medium-priority';

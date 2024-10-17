@@ -1,6 +1,47 @@
+.date-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    color: gray;
+}
+.date-container p{
+    font-size: 1.6rem;
+}
+.date-container h2{
+    font-size: 2.4rem;
+}
+
+
+.priority-colours{
+    display: flex;
+    
+}
+.priority-colours li{
+    margin-right: 5px;
+    color: white;
+}
+.priority-colours li.priorities{
+    color: gray;
+    border: none;
+    font-size: 1.6rem;
+}
+.high{
+    background: #ff0000;
+}
+.medium{
+    background: #fcba3f;
+}
+.low{
+    background: #04b204;
+}
+.overdue{
+    background: #f08080;
+}
+
 
 .high-priority {
-    background-color: red;
+    background-color: #ff0000;
     color: white;
 }
 
@@ -15,13 +56,13 @@
 }
 
 
-.completed {
+.completed-task {
     text-decoration: line-through;
 }
 
 
 .overdue-task {
-    background-color: lightcoral;
+    background-color: #f08080;
     color: white;
 }
 
@@ -47,7 +88,7 @@ li {
 
 li span {
     flex: 1;
-    /* The task name and due date will use space but not push the others */
+    
 }
 
 .complete-task {

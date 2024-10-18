@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 15px;
+    color: #fff;
+}
+
+.navbar .navbar-brand {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar .navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar .navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Landing Page */
+.landing-container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.landing-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.landing-text h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.landing-text p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.landing-text button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.landing-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.how-it-works,
+.about {
+    padding: 50px 0;
+}
+
+.how-it-works h2,
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.how-it-works p,
+.about p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}

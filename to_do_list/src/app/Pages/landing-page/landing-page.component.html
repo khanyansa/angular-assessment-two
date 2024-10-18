@@ -2,36 +2,128 @@
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">TaskFlow</a>
-            <ul class="navbar-links">
+            <div class="hamburger" (click)="toggleMenu()">
+                &#9776; 
+            </div>
+            <ul class="navbar-links" [class.show]="menuOpen">
                 <li><a (click)="navigateToLoginSignup()">Login</a></li>
-                <li><a href="#how-it-works">How it works</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#key-features" (click)="toggleMenu()">Features</a></li>
+                <li><a href="#how-it-works" (click)="toggleMenu()">How it works</a></li>
+                <li><a href="#about" (click)="toggleMenu()">About</a></li>
             </ul>
         </div>
     </nav>
 
+
     <div class="landing-content">
         <div class="landing-text">
-            <h1>Organize your tasks with TaskFlow</h1>
-            <p>Manage your tasks efficiently and stay on top of your deadlines.</p>
+            <h1>Organize Your Day With Ease</h1>
+            <h4>Stay on top of your tasks and achieve more effortlessly</h4>
+            <p>Welcome to TaskFlow, your personal productivity powerhouse! Take control of your day with our to-do list that helps you organise, prioritise, and conquer your tasks with ease. Whether you're managing dails goals or long-term projects, TaskFlow keeps on track and ahead of deadlines, so you can focus on what matters the most. Start simplifying your life today - one task at a time.</p>
             <button (click)="navigateToLoginSignup()">Get Started</button>
         </div>
         <div class="landing-image">
-            <img src="assets/landing-image.jpg" alt="TaskFlow Landing Image">
+            <img src="./images/landing-image2.jpeg" alt="TaskFlow Landing Image">
         </div>
     </div>
 
-    <section id="how-it-works" class="how-it-works">
-        <h2>How it works</h2>
-        <p>TaskFlow allows you to create, organize, and track your daily tasks with ease. Prioritize, set deadlines, and
-            complete tasks all in one place.</p>
+    <section class="key-features" id="key-features">
+        <h2>Key Features</h2>
+        <div class="features-container">
+            <div class="feature">
+                <div class="circle-number">1</div>
+                <div class="feature-content">
+                    <h3>Organize Tasks</h3>
+                    <p>Create, edit, and manage your tasks in one place.</p>
+                </div>
+            </div>
+    
+            <div class="feature">
+                <div class="circle-number">2</div>
+                <div class="feature-content">
+                    <h3>Set Priorities</h3>
+                    <p>Assign priority levels to stay focused on what’s important.</p>
+                </div>
+            </div>
+    
+            <div class="feature">
+                <div class="circle-number">3</div>
+                <div class="feature-content">
+                    <h3>Track Progress</h3>
+                    <p>Mark tasks as complete and see your accomplishments.</p>
+                </div>
+            </div>
+    
+            <div class="feature">
+                <div class="circle-number">4</div>
+                <div class="feature-content">
+                    <h3>Stay Productive</h3>
+                    <p>Consistently achieve your goals with daily task tracking.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="about" class="about">
-        <h2>About TaskFlow</h2>
-        <p>TaskFlow is your go-to productivity tool for managing your tasks and achieving your goals. Simplify your life
-            with an intuitive dashboard and easy-to-use features.</p>
+    <section class="about-section" id="about">
+        <div class="about-text">
+            <h2>About TaskFlow</h2>
+            <p>This task manager was created with simplicity and productivity in mind. Whether you're juggling multiple
+                responsibilities or focusing on a single project, our tool helps you stay organized and achieve your goals
+                efficiently.</p>
+            <p>Our mission is to empower you to:</p>
+            <ul>
+                <li>Stay focused on what matters most.</li>
+                <li>Keep track of deadlines with minimal effort.</li>
+                <li>Customize your tasks to suit your unique workflow.</li>
+            </ul>
+            <p>With this to-do list manager, managing your time and tasks becomes easier, enabling you to stay productive
+                and stress-free.</p>
+        </div>
+        <div class="about-image">
+            <img src="./images/landing-image3.jpeg" alt="To-do list landing page image">
+        </div>
     </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h3>Create an Account</h3>
+                <p>Sign up to access your personal dashboard and start managing your tasks.</p>
+            </div>
+    
+            <div class="step">
+                <div class="icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3>Add Your Tasks</h3>
+                <p>List out your tasks, set deadlines, and prioritize them based on urgency.</p>
+            </div>
+    
+            <div class="step">
+                <div class="icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Track Progress</h3>
+                <p>Monitor the status of your tasks as you complete them.</p>
+            </div>
+    
+            <div class="step">
+                <div class="icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Complete and Reflect</h3>
+                <p>Mark tasks as complete and review your progress.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    
 
     <footer>
         <p>&copy; 2024 TaskFlow. All rights reserved.</p>

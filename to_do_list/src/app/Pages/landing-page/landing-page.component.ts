@@ -15,5 +15,11 @@ export class LandingPageComponent {
   navigateToLoginSignup() {
     this.router.navigateByUrl('/loginsignup');
   }
+
+  menuOpen = false; 
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen; 
+  }
 }
 

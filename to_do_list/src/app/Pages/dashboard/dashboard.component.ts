@@ -1,6 +1,4 @@
 
-// UPDATED TO DO LIST CODE
-
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -79,6 +77,10 @@ export class DashboardComponent implements OnInit {
     this.taskToEdit = task;
     this.newTask = { ...task };
   }
+
+  getTaskNameClass(task: Task) {
+  return task.completed ? 'task-name-completed' : ''; 
+}
 
   getPriorityClass(task: Task) {
     const today = new Date();

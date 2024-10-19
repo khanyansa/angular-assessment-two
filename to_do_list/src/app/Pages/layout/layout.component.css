@@ -1,5 +1,14 @@
+nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    border-radius: 0;
+}
 .container-fluid{
     background: linear-gradient(35deg, #ff3f34, #0a0909 );
+   
 }
 .navbar-brand{
     color: #fffbfb;

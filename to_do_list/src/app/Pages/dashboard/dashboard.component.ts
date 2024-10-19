@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -19,14 +18,14 @@ interface Task {
 })
 export class DashboardComponent implements OnInit {
   currentDate: Date;
-
-  constructor(){
-    this.currentDate = new Date();
-  }
   tasks: Task[] = [];
   newTask: Task = { name: '', priority: 'low', dueDate: '', completed: false };
   isEditing: boolean = false;
   taskToEdit: Task | null = null;
+
+  constructor() {
+    this.currentDate = new Date();
+  }
 
   ngOnInit(): void {
     this.loadTasks(); 
@@ -34,15 +33,19 @@ export class DashboardComponent implements OnInit {
   }
 
   loadTasks() {
-    const storedTasks = localStorage.getItem('tasks');
-    if (storedTasks) {
-      this.tasks = JSON.parse(storedTasks);
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const storedTasks = localStorage.getItem('tasks');
+      if (storedTasks) {
+        this.tasks = JSON.parse(storedTasks);
+      }
+      this.sortTasksByDate();
     }
-    this.sortTasksByDate();
   }
 
   saveTasks() {
-    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    }
   }
 
   addTask() {
@@ -79,19 +82,17 @@ export class DashboardComponent implements OnInit {
   }
 
   getTaskNameClass(task: Task) {
-  return task.completed ? 'task-name-completed' : ''; 
-}
+    return task.completed ? 'task-name-completed' : ''; 
+  }
 
   getPriorityClass(task: Task) {
     const today = new Date();
     const dueDate = new Date(task.dueDate);
-    if (task.completed){
+    if (task.completed) {
       return 'completed-task';
-    }
-    else if(dueDate < today){
+    } else if (dueDate < today) {
       return 'overdue-task';
-    }
-      else if (task.priority === 'high') {
+    } else if (task.priority === 'high') {
       return 'high-priority';
     } else if (task.priority === 'medium') {
       return 'medium-priority';
@@ -104,6 +105,3 @@ export class DashboardComponent implements OnInit {
     this.tasks.sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime());
   }
 }
-
-
-

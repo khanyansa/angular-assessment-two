@@ -26,38 +26,45 @@ export class LoginSignupComponent {
 
   }
 
-  signupForm(){
-    debugger;
-    const localusers =localStorage.getItem('users');
-    if(localusers != null){
+  signupForm() {
+  debugger;
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const localusers = localStorage.getItem('users');
+    if (localusers != null) {
       const users = JSON.parse(localusers);
       users.push(this.signupObj);
       localStorage.setItem('users', JSON.stringify(users));
-    }
-    else{
-      const users = []
-      users.push(this.signupObj)
-      localStorage.setItem('users', JSON.stringify(users))
+    } else {
+      const users = [];
+      users.push(this.signupObj);
+      localStorage.setItem('users', JSON.stringify(users));
     }
     this._snackbar.open('You have successfully signed up!', 'Close');
   }
+}
 
-  loginForm(){
-    debugger;
+
+loginForm() {
+  debugger;
+  if (typeof window !== 'undefined' && window.localStorage) {
     const localusers = localStorage.getItem('users');
-    if(localusers != null){
+    if (localusers != null) {
       const users = JSON.parse(localusers);
-      const isUserExist =users.find((user:signupModel)=> user.email == this.loginObj.email && user.password == this.loginObj.password)
-      if(isUserExist != undefined){
+      const isUserExist = users.find(
+        (user: signupModel) => user.email == this.loginObj.email && user.password == this.loginObj.password
+      );
+      if (isUserExist != undefined) {
         this._snackbar.open('Login successful!', 'Close');
         localStorage.setItem('loggedUser', JSON.stringify(isUserExist));
         this._router.navigateByUrl('/dashboard');
-      }
-      else{
+      } else {
         this._snackbar.open('Email or Password is incorrect!');
       }
     }
   }
+}
+
+
 }
 export class signupModel{
   name: string;

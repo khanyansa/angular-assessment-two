@@ -13,22 +13,20 @@ import { Router } from '@angular/router';
 export class LayoutComponent {
   loggedUser: any;
 
-  constructor(private _router: Router, @Inject(PLATFORM_ID) private platformId: Object){
-    if(isPlatformBrowser(this.platformId)){
-       const localUser = localStorage.getItem('loggedUser');
-      if(localUser != null){
+  constructor(private _router: Router, @Inject(PLATFORM_ID) private platformId: Object) {
+    if (isPlatformBrowser(this.platformId)) {
+      const localUser = localStorage.getItem('loggedUser');
+      if (localUser != null) {
         this.loggedUser = JSON.parse(localUser);
+      }
     }
-    }
-   
   }
-  
-onLogOut(){
-  if(isPlatformBrowser(this.platformId)){
-    localStorage.removeItem('loggedUser');
 
+  onLogOut() {
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem('loggedUser');
+    }
+
+    this._router.navigateByUrl('loginsignup');
   }
-  
-  this._router.navigateByUrl('loginsignup');
-}
 }
